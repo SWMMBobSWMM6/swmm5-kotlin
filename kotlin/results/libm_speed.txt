@@ -1,0 +1,13 @@
+# test/PowTime.kt (Kotlin 2.0.21 on OpenJDK 21.0.12) and test/powtime_glibc.c (gcc -O2, glibc 2.39), same machine,
+# 6 November 2026, on a 2-core machine shared with another agent's work. ns per call, 2 million arguments.
+Kotlin rep 0: pow 30.0 ns, exp 8.5 ns, sin 37.8 ns   (includes JIT compilation)
+Kotlin rep 1: pow 11.5 ns, exp 6.3 ns, sin 30.9 ns
+Kotlin rep 2: pow 10.4 ns, exp 6.3 ns, sin 30.6 ns
+Kotlin rep 3: pow 10.1 ns, exp 6.3 ns, sin 31.0 ns
+Kotlin rep 4: pow 10.3 ns, exp 6.3 ns, sin 30.8 ns
+Kotlin rep 5: pow 10.2 ns, exp 6.2 ns, sin 30.1 ns
+glibc  rep 0: pow 10.2 ns, exp 4.0 ns, sin 15.2 ns
+glibc  rep 1: pow  9.6 ns, exp 3.7 ns, sin 15.1 ns
+glibc  rep 2: pow  9.4 ns, exp 3.5 ns, sin 15.1 ns
+# The dispatch-loop form (one loop over GIMPLE basic blocks, the Java shape) costs Kotlin pow about 8% over glibc
+# here, exp about 1.7 times and sin about 2 times: the JIT straightens the loop, unlike Go's compiler (lessons/17).

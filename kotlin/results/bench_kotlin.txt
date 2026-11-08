@@ -1,0 +1,80 @@
+# kotlin/test/bench_kotlin.py 3 fcdbc4886a73 77e00bc268b0 2bd2002b905c 36d039d18ca7 17bc23add21e 22c87e68a427   (6 November 2026; decks copied to /dev/shm; 2-core machine shared with another agent)
+0 fcdbc4886a73 Java 22.788 22.23 True
+0 fcdbc4886a73 Kotlin 23.926 22.564 True
+0 fcdbc4886a73 EPA again 17.996 18.025 True
+0 fcdbc4886a73 EPA 18.128 18.166 True
+0 77e00bc268b0 Java 21.161 19.445 True
+0 77e00bc268b0 EPA 15.718 15.743 True
+0 77e00bc268b0 Kotlin 22.05 20.106 True
+0 77e00bc268b0 EPA again 15.657 15.676 True
+0 2bd2002b905c EPA 4.859 4.877 True
+0 2bd2002b905c Kotlin 9.467 7.022 True
+0 2bd2002b905c Java 8.65 6.412 True
+0 2bd2002b905c EPA again 4.629 4.631 True
+0 36d039d18ca7 EPA again 1.884 1.885 True
+0 36d039d18ca7 Java 3.887 2.769 True
+0 36d039d18ca7 EPA 1.917 1.921 True
+0 36d039d18ca7 Kotlin 4.964 3.42 True
+0 17bc23add21e Kotlin 7.061 5.641 True
+0 17bc23add21e EPA again 3.875 3.876 True
+0 17bc23add21e EPA 3.93 3.931 True
+0 17bc23add21e Java 6.37 5.113 True
+0 22c87e68a427 EPA 5.765 5.77 True
+0 22c87e68a427 Java 7.788 7.028 True
+0 22c87e68a427 EPA again 5.776 5.781 True
+0 22c87e68a427 Kotlin 7.736 7.153 True
+1 fcdbc4886a73 EPA 17.834 17.846 True
+1 fcdbc4886a73 EPA again 17.72 17.755 True
+1 fcdbc4886a73 Kotlin 23.777 22.427 True
+1 fcdbc4886a73 Java 22.6 21.009 True
+1 77e00bc268b0 Kotlin 22.293 20.214 True
+1 77e00bc268b0 EPA 15.552 15.58 True
+1 77e00bc268b0 Java 20.442 19.7 True
+1 77e00bc268b0 EPA again 15.373 15.45 True
+1 2bd2002b905c EPA again 4.694 4.714 True
+1 2bd2002b905c Java 8.632 8.7 True
+1 2bd2002b905c Kotlin 9.811 9.803 True
+1 2bd2002b905c EPA 4.623 4.641 True
+1 36d039d18ca7 EPA 1.887 1.893 True
+1 36d039d18ca7 EPA again 1.872 1.883 True
+1 36d039d18ca7 Kotlin 4.838 4.753 True
+1 36d039d18ca7 Java 3.725 3.732 True
+1 17bc23add21e Java 6.319 6.316 True
+1 17bc23add21e EPA again 3.848 3.854 True
+1 17bc23add21e EPA 3.861 3.865 True
+1 17bc23add21e Kotlin 7.3 7.008 True
+1 22c87e68a427 EPA 5.709 5.729 True
+1 22c87e68a427 EPA again 5.739 5.777 True
+1 22c87e68a427 Kotlin 7.708 7.766 True
+1 22c87e68a427 Java 7.684 7.731 True
+2 fcdbc4886a73 EPA 18.116 18.212 True
+2 fcdbc4886a73 Kotlin 23.792 23.904 True
+2 fcdbc4886a73 EPA again 18.091 20.67 True
+2 fcdbc4886a73 Java 22.778 28.679 True
+2 77e00bc268b0 Kotlin 22.76 26.697 True
+2 77e00bc268b0 Java 20.733 20.939 True
+2 77e00bc268b0 EPA 15.585 18.844 True
+2 77e00bc268b0 EPA again 15.573 19.704 True
+2 2bd2002b905c EPA again 4.752 6.782 True
+2 2bd2002b905c Kotlin 10.12 12.081 True
+2 2bd2002b905c EPA 4.765 6.154 True
+2 2bd2002b905c Java 8.797 13.332 True
+2 36d039d18ca7 EPA 1.876 1.937 True
+2 36d039d18ca7 Kotlin 5.013 4.872 True
+2 36d039d18ca7 Java 4.135 4.161 True
+2 36d039d18ca7 EPA again 1.898 1.968 True
+2 17bc23add21e Kotlin 7.254 7.35 True
+2 17bc23add21e EPA again 3.818 4.348 True
+2 17bc23add21e EPA 3.844 5.681 True
+2 17bc23add21e Java 6.527 9.187 True
+2 22c87e68a427 EPA 5.82 5.961 True
+2 22c87e68a427 Java 7.658 7.681 True
+2 22c87e68a427 Kotlin 7.843 7.891 True
+2 22c87e68a427 EPA again 5.789 5.814 True
+median CPU seconds over reps, and ratio to EPA:
+fcdbc4886a73 72_H&H_Elements(2).inp                        EPA 18.12  EPA again 18.00 (x0.99)  Kotlin 23.79 (x1.31)  Java 22.78 (x1.26)
+77e00bc268b0 SCANLON.inp                                   EPA 15.59  EPA again 15.57 (x1.00)  Kotlin 22.29 (x1.43)  Java 20.73 (x1.33)
+2bd2002b905c 17_Sub_90_Link_USA_Units.inp                  EPA 4.76  EPA again 4.69 (x0.99)  Kotlin 9.81 (x2.06)  Java 8.65 (x1.82)
+36d039d18ca7 22_Subs.inp                                   EPA 1.89  EPA again 1.88 (x1.00)  Kotlin 4.96 (x2.63)  Java 3.89 (x2.06)
+17bc23add21e CN_Horton.inp                                 EPA 3.86  EPA again 3.85 (x1.00)  Kotlin 7.25 (x1.88)  Java 6.37 (x1.65)
+22c87e68a427 attenuation_KW_High_CE.inp                    EPA 5.76  EPA again 5.78 (x1.00)  Kotlin 7.74 (x1.34)  Java 7.68 (x1.33)

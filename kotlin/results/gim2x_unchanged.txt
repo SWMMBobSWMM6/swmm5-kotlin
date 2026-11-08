@@ -1,0 +1,12 @@
+# gim2x.py after adding the Kotlin back end (kt): the TypeScript, Java and Go outputs regenerated from the same GIMPLE
+# (/home/claude/ext/glibm_build/gimple) and tables (tables.json) with tools/libm/make_libm.sh's arguments, 2026-11-06T08:01Z;
+# Go after gofmt as make_libm.sh does. diff against the shipped files: no differences.
+d9181912a51fd3c5d963abc792b7982b  regenerated/glibm.ts
+d9181912a51fd3c5d963abc792b7982b  ts/src/glibm.ts
+3595a840d23128ee41e3e7dfc73cd537  regenerated/Glibm.java
+3595a840d23128ee41e3e7dfc73cd537  java/src/swmm5/Glibm.java
+fa30ec1c5a5d0b8e9d7db8f2c813a0ea  regenerated/go/glibm.go
+fa30ec1c5a5d0b8e9d7db8f2c813a0ea  go/glibm/glibm.go
+identical: ts/src/glibm.ts
+identical: java/src/swmm5/Glibm.java
+identical: go/glibm/glibm.go

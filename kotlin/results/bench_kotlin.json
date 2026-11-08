@@ -1,0 +1,650 @@
+[
+ {
+  "rep": 0,
+  "id": "fcdbc4886a73",
+  "engine": "Java",
+  "cpu": 22.788,
+  "wall": 22.23,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "fcdbc4886a73",
+  "engine": "Kotlin",
+  "cpu": 23.926,
+  "wall": 22.564,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "fcdbc4886a73",
+  "engine": "EPA again",
+  "cpu": 17.996,
+  "wall": 18.025,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "fcdbc4886a73",
+  "engine": "EPA",
+  "cpu": 18.128,
+  "wall": 18.166,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "77e00bc268b0",
+  "engine": "Java",
+  "cpu": 21.161,
+  "wall": 19.445,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "77e00bc268b0",
+  "engine": "EPA",
+  "cpu": 15.718,
+  "wall": 15.743,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "77e00bc268b0",
+  "engine": "Kotlin",
+  "cpu": 22.05,
+  "wall": 20.106,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "77e00bc268b0",
+  "engine": "EPA again",
+  "cpu": 15.657,
+  "wall": 15.676,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "2bd2002b905c",
+  "engine": "EPA",
+  "cpu": 4.859,
+  "wall": 4.877,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "2bd2002b905c",
+  "engine": "Kotlin",
+  "cpu": 9.467,
+  "wall": 7.022,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "2bd2002b905c",
+  "engine": "Java",
+  "cpu": 8.65,
+  "wall": 6.412,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "2bd2002b905c",
+  "engine": "EPA again",
+  "cpu": 4.629,
+  "wall": 4.631,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "36d039d18ca7",
+  "engine": "EPA again",
+  "cpu": 1.884,
+  "wall": 1.885,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "36d039d18ca7",
+  "engine": "Java",
+  "cpu": 3.887,
+  "wall": 2.769,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "36d039d18ca7",
+  "engine": "EPA",
+  "cpu": 1.917,
+  "wall": 1.921,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "36d039d18ca7",
+  "engine": "Kotlin",
+  "cpu": 4.964,
+  "wall": 3.42,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "17bc23add21e",
+  "engine": "Kotlin",
+  "cpu": 7.061,
+  "wall": 5.641,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "17bc23add21e",
+  "engine": "EPA again",
+  "cpu": 3.875,
+  "wall": 3.876,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "17bc23add21e",
+  "engine": "EPA",
+  "cpu": 3.93,
+  "wall": 3.931,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "17bc23add21e",
+  "engine": "Java",
+  "cpu": 6.37,
+  "wall": 5.113,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "22c87e68a427",
+  "engine": "EPA",
+  "cpu": 5.765,
+  "wall": 5.77,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "22c87e68a427",
+  "engine": "Java",
+  "cpu": 7.788,
+  "wall": 7.028,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "22c87e68a427",
+  "engine": "EPA again",
+  "cpu": 5.776,
+  "wall": 5.781,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 0,
+  "id": "22c87e68a427",
+  "engine": "Kotlin",
+  "cpu": 7.736,
+  "wall": 7.153,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "fcdbc4886a73",
+  "engine": "EPA",
+  "cpu": 17.834,
+  "wall": 17.846,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "fcdbc4886a73",
+  "engine": "EPA again",
+  "cpu": 17.72,
+  "wall": 17.755,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "fcdbc4886a73",
+  "engine": "Kotlin",
+  "cpu": 23.777,
+  "wall": 22.427,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "fcdbc4886a73",
+  "engine": "Java",
+  "cpu": 22.6,
+  "wall": 21.009,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "77e00bc268b0",
+  "engine": "Kotlin",
+  "cpu": 22.293,
+  "wall": 20.214,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "77e00bc268b0",
+  "engine": "EPA",
+  "cpu": 15.552,
+  "wall": 15.58,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "77e00bc268b0",
+  "engine": "Java",
+  "cpu": 20.442,
+  "wall": 19.7,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "77e00bc268b0",
+  "engine": "EPA again",
+  "cpu": 15.373,
+  "wall": 15.45,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "2bd2002b905c",
+  "engine": "EPA again",
+  "cpu": 4.694,
+  "wall": 4.714,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "2bd2002b905c",
+  "engine": "Java",
+  "cpu": 8.632,
+  "wall": 8.7,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "2bd2002b905c",
+  "engine": "Kotlin",
+  "cpu": 9.811,
+  "wall": 9.803,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "2bd2002b905c",
+  "engine": "EPA",
+  "cpu": 4.623,
+  "wall": 4.641,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "36d039d18ca7",
+  "engine": "EPA",
+  "cpu": 1.887,
+  "wall": 1.893,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "36d039d18ca7",
+  "engine": "EPA again",
+  "cpu": 1.872,
+  "wall": 1.883,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "36d039d18ca7",
+  "engine": "Kotlin",
+  "cpu": 4.838,
+  "wall": 4.753,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "36d039d18ca7",
+  "engine": "Java",
+  "cpu": 3.725,
+  "wall": 3.732,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "17bc23add21e",
+  "engine": "Java",
+  "cpu": 6.319,
+  "wall": 6.316,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "17bc23add21e",
+  "engine": "EPA again",
+  "cpu": 3.848,
+  "wall": 3.854,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "17bc23add21e",
+  "engine": "EPA",
+  "cpu": 3.861,
+  "wall": 3.865,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "17bc23add21e",
+  "engine": "Kotlin",
+  "cpu": 7.3,
+  "wall": 7.008,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "22c87e68a427",
+  "engine": "EPA",
+  "cpu": 5.709,
+  "wall": 5.729,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "22c87e68a427",
+  "engine": "EPA again",
+  "cpu": 5.739,
+  "wall": 5.777,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "22c87e68a427",
+  "engine": "Kotlin",
+  "cpu": 7.708,
+  "wall": 7.766,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 1,
+  "id": "22c87e68a427",
+  "engine": "Java",
+  "cpu": 7.684,
+  "wall": 7.731,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "fcdbc4886a73",
+  "engine": "EPA",
+  "cpu": 18.116,
+  "wall": 18.212,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "fcdbc4886a73",
+  "engine": "Kotlin",
+  "cpu": 23.792,
+  "wall": 23.904,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "fcdbc4886a73",
+  "engine": "EPA again",
+  "cpu": 18.091,
+  "wall": 20.67,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "fcdbc4886a73",
+  "engine": "Java",
+  "cpu": 22.778,
+  "wall": 28.679,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "77e00bc268b0",
+  "engine": "Kotlin",
+  "cpu": 22.76,
+  "wall": 26.697,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "77e00bc268b0",
+  "engine": "Java",
+  "cpu": 20.733,
+  "wall": 20.939,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "77e00bc268b0",
+  "engine": "EPA",
+  "cpu": 15.585,
+  "wall": 18.844,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "77e00bc268b0",
+  "engine": "EPA again",
+  "cpu": 15.573,
+  "wall": 19.704,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "2bd2002b905c",
+  "engine": "EPA again",
+  "cpu": 4.752,
+  "wall": 6.782,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "2bd2002b905c",
+  "engine": "Kotlin",
+  "cpu": 10.12,
+  "wall": 12.081,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "2bd2002b905c",
+  "engine": "EPA",
+  "cpu": 4.765,
+  "wall": 6.154,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "2bd2002b905c",
+  "engine": "Java",
+  "cpu": 8.797,
+  "wall": 13.332,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "36d039d18ca7",
+  "engine": "EPA",
+  "cpu": 1.876,
+  "wall": 1.937,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "36d039d18ca7",
+  "engine": "Kotlin",
+  "cpu": 5.013,
+  "wall": 4.872,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "36d039d18ca7",
+  "engine": "Java",
+  "cpu": 4.135,
+  "wall": 4.161,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "36d039d18ca7",
+  "engine": "EPA again",
+  "cpu": 1.898,
+  "wall": 1.968,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "17bc23add21e",
+  "engine": "Kotlin",
+  "cpu": 7.254,
+  "wall": 7.35,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "17bc23add21e",
+  "engine": "EPA again",
+  "cpu": 3.818,
+  "wall": 4.348,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "17bc23add21e",
+  "engine": "EPA",
+  "cpu": 3.844,
+  "wall": 5.681,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "17bc23add21e",
+  "engine": "Java",
+  "cpu": 6.527,
+  "wall": 9.187,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "22c87e68a427",
+  "engine": "EPA",
+  "cpu": 5.82,
+  "wall": 5.961,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "22c87e68a427",
+  "engine": "Java",
+  "cpu": 7.658,
+  "wall": 7.681,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "22c87e68a427",
+  "engine": "Kotlin",
+  "cpu": 7.843,
+  "wall": 7.891,
+  "rc": 0,
+  "rpt_same": true
+ },
+ {
+  "rep": 2,
+  "id": "22c87e68a427",
+  "engine": "EPA again",
+  "cpu": 5.789,
+  "wall": 5.814,
+  "rc": 0,
+  "rpt_same": true
+ }
+]

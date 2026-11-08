@@ -1,0 +1,7 @@
+#!/bin/sh
+# runswmm - run the Kotlin port with room to grow. The JVM's default heap is a quarter of the machine's memory,
+# and one corpus model (Hydrology/sewer_rdii_problem.inp) allocates 3.38 GB of RDII rainfall-history arrays, as
+# EPA itself does (gate/rdii_memory.py; lessons/14). The Java port runs it with the parallel collector and 75% of
+# memory; so does this one.
+#   kotlin/runswmm <input file> <report file> [output file]
+exec java -XX:+UseParallelGC -XX:MaxRAMPercentage=75 -jar "$(dirname "$0")/swmm5.jar" "$@"
