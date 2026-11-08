@@ -155,6 +155,70 @@ class RbEmitter(PyEmitter):
         self.boxed_globals = set()
         self._find_boxed_globals()
         self.tmp_count = 0
+        self.cur_hoist = False
+        self.hoisted = []                    # (constant name) of boxes allocated once at load time
+        self.reentrant = self.find_reentrant()
+
+    # ================================================================== boxes
+    def find_reentrant(self):
+        """functions that can be active twice at once (on a cycle of the call graph; a call through a function
+        pointer may reach any function whose address is taken). The others keep their boxed locals (C locals
+        whose address is taken) in boxes allocated once, not one Box.new per call."""
+        F = self.F
+        addr = set()
+        for n in self.P.func_values:
+            addr.update(F.func_by_decl.get(n, []))
+        edges = {k: set() for k in F.funcs}
+
+        def walk(x, k):
+            if x.kind == K.CALL_EXPR:
+                d = x.referenced
+                if d is not None and d.kind == K.FUNCTION_DECL:
+                    keys = F.func_by_decl.get(d.spelling) or []
+                    cand = [q for q in keys if q[0] == k[0]] or [q for q in keys if F.funcs[q].storage_class != front.ci.StorageClass.STATIC]
+                    if cand:
+                        edges[k].add(cand[0])
+                else:
+                    edges[k].update(addr)
+            for y in x.get_children():
+                walk(y, k)
+        for k, c in F.funcs.items():
+            walk(c, k)
+        # Tarjan's strongly connected components, iteratively
+        index, low, on, stack, res, n = {}, {}, set(), [], set(), [0]
+        for root in edges:
+            if root in index:
+                continue
+            work = [(root, iter(sorted(edges[root])))]
+            index[root] = low[root] = n[0]; n[0] += 1; stack.append(root); on.add(root)
+            while work:
+                v, it = work[-1]
+                w = next(it, None)
+                if w is not None:
+                    if w not in index:
+                        index[w] = low[w] = n[0]; n[0] += 1; stack.append(w); on.add(w)
+                        work.append((w, iter(sorted(edges[w]))))
+                    elif w in on:
+                        low[v] = min(low[v], index[w])
+                    continue
+                work.pop()
+                if work:
+                    low[work[-1][0]] = min(low[work[-1][0]], low[v])
+                if low[v] == index[v]:
+                    comp = []
+                    while True:
+                        w = stack.pop(); on.discard(w); comp.append(w)
+                        if w == v:
+                            break
+                    if len(comp) > 1 or v in edges[v]:
+                        res.update(comp)
+        return res
+
+    def hoisted_box(self, local):
+        name = 'BX_%s_%s' % (self.cur_fname.rstrip('_'), local)
+        if name not in self.hoisted:
+            self.hoisted.append(name)
+        return name
 
     # ================================================================== naming
     def global_ref(self, d):
@@ -483,7 +547,11 @@ class RbEmitter(PyEmitter):
             return '(%s / %s)' % (le, re_)
         if is_pure(re_):
             return '(%s == 0.0 ? fdiv0(%s, %s) : %s / %s)' % (re_, le, re_, self.paren(le), re_)
-        return 'fdiv(%s, %s)' % (le, re_)
+        if '(' in le and not is_pure(le) and re.search(r'\w\(', le):
+            # both operands may call functions: keep C's usual left-to-right order through the helper
+            return 'fdiv(%s, %s)' % (le, re_)
+        t = self.tmp('d')
+        return '((%s = %s) == 0.0 ? fdiv0(%s, %s) : %s / %s)' % (t, re_, le, t, self.paren(le), t)
 
     def x_BINARY_OPERATOR(self, c):
         op = binop(c)
@@ -691,10 +759,11 @@ class RbEmitter(PyEmitter):
             return Ex('%s(%s)' % (self.MATH_RB[name], A(0)), 'd')
         if name == 'pow':
             x, y = A(0), A(1)
+            # Float#** calls glibc's pow except for a negative base with a non-integral exponent
             if is_pure(x):
-                # Float#** calls glibc's pow except for a negative base with a non-integral exponent
                 return Ex('(%s < 0.0 ? c_powneg(%s, %s) : %s ** %s)' % (x, x, y, x, self.paren(y)), 'd')
-            return Ex('c_pow(%s, %s)' % (x, y), 'd')
+            t = self.tmp('p')
+            return Ex('((%s = %s) < 0.0 ? c_powneg(%s, %s) : %s ** %s)' % (t, x, t, y, t, self.paren(y)), 'd')
         if name in ('fprintf', 'snprintf', 'sscanf'):
             fixed = {'fprintf': 2, 'snprintf': 3, 'sscanf': 2}[name]
             head = [A(i) for i in range(fixed)]
@@ -1096,6 +1165,9 @@ class RbEmitter(PyEmitter):
             return [p + '%s = %s.new' % (name, self.rec(t))]
         v = self.conv(self.val(init[-1]), init[-1].type, d.type).code if init else self.zero(d.type)
         if boxed:
+            if self.cur_hoist:
+                bx = self.hoisted_box(name)
+                return [p + '%s = %s' % (name, bx), p + '%s.v = %s' % (name, v)]
             return [p + '%s = Box.new(%s)' % (name, v)]
         return [p + '%s = %s' % (name, v)]
 
@@ -1140,10 +1212,16 @@ class RbEmitter(PyEmitter):
         scan(body)
         ps = [self.declare_local(prm) for prm in params]
         out = ['  # %s:%d' % (b, c.location.line), '  def %s(%s)' % (self.fname[key], ', '.join(ps))]
+        self.cur_hoist = key not in self.reentrant
+        self.cur_fname = self.fname[key]
         lines = []
         for prm, nm in zip(params, ps):
             if decl_key(prm) in self.boxed_locals:
-                lines.append('    %s = Box.new(%s)' % (nm, nm))
+                if self.cur_hoist:
+                    bx = self.hoisted_box(nm)
+                    lines += ['    %s.v = %s' % (bx, nm), '    %s = %s' % (nm, bx)]
+                else:
+                    lines.append('    %s = Box.new(%s)' % (nm, nm))
         lines += self.stmt(body, 2)
         return out + lines + ['  end']
 
@@ -1237,7 +1315,10 @@ class RbEmitter(PyEmitter):
         out = ['# Generated from EPA SWMM 5.2.4 by tools/c2x/emit_ruby.py. Do not edit by hand;',
                '# fix the translator or swmm5/crt.rb instead.',
                '# frozen_string_literal: false', '',
-               'module SWMM5', '  include CRT', '  extend self', '']
+               'module SWMM5', '  include CRT', '  extend self',
+               '  # the runtime classes, visible by name inside the record classes below too',
+               '  CPtr = CRT::CPtr', '  Box = CRT::Box', '  FieldRef = CRT::FieldRef', '  ElemRef = CRT::ElemRef',
+               '  GlobalRef = CRT::GlobalRef', '']
         for n, v in self.F.enum_consts.items():
             out.append('  %s = %d' % (rb_const(n), v))
         done = set()
@@ -1255,6 +1336,10 @@ class RbEmitter(PyEmitter):
         out.append('')
         for bts, name in self.lits.items():
             out.append('  %s = lit(%s)' % (name, rb_bytes(bts)))
+        out += ['', '  # boxes for the C locals whose address is taken, in functions that cannot be re-entered (one per',
+                '  # local, allocated once; see find_reentrant in tools/c2x/emit_ruby.py)']
+        for name in self.hoisted:
+            out.append('  %s = Box.new(nil)' % name)
         out += ['']
         for name, c in self.F.records.items():
             out += self.record(name, c)
